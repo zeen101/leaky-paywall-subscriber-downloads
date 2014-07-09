@@ -9,8 +9,7 @@ Let's you obfuscate any link to any file in your media library. More info at htt
 
 == Description ==
 
-Let's you obfuscate any link to any file in your media library. Requiring a user to have a valid Leaky Paywall
-subscription before downloading content.
+Let's you obfuscate any link to any file in your media library. Requiring a user to have a valid Leaky Paywall subscription before downloading content.
 
 More info at http://zeen101.com
 
