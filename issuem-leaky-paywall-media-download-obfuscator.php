@@ -2,12 +2,12 @@
 /**
  * Main PHP file used to for initial calls to IssueM's Leak Paywall classes and functions.
  *
- * @package IssueM's Leak Paywall - Media Download Obfuscator
+ * @package IssueM's Leak Paywall - Subscriber Downloads
  * @since 1.0.0
  */
  
 /*
-Plugin Name: IssueM's Leaky Paywall - Media Download Obfuscator
+Plugin Name: IssueM's Leaky Paywall - Subscriber Downloads
 Plugin URI: http://issuem.com/
 Description: A premium leaky paywall add-on for WordPress and IssueM.
 Author: IssueM Development Team
@@ -20,8 +20,8 @@ Tags:
 if ( !defined( 'ISSUEM_STORE_URL' ) )
 	define( 'ISSUEM_STORE_URL', 	'http://issuem.com' );
 	
-define( 'ISSUEM_LP_MDO_NAME', 		'Leaky Paywall - Media Download Obfuscator' );
-define( 'ISSUEM_LP_MDO_SLUG', 		'issuem-leaky-paywall-media-download-obfuscator' );
+define( 'ISSUEM_LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads' );
+define( 'ISSUEM_LP_MDO_SLUG', 		'issuem-leaky-paywall-subscriber-downloads' );
 define( 'ISSUEM_LP_MDO_VERSION', 	'1.0.0' );
 define( 'ISSUEM_LP_MDO_DB_VERSION', '1.0.0' );
 define( 'ISSUEM_LP_MDO_URL', 		plugin_dir_url( __FILE__ ) );
