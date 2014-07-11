@@ -1,4 +1,4 @@
-=== IssueM - Leaky Paywall - Media Download Obfuscator ===
+=== IssueM - Leaky Paywall - Subscriber Downloads ===
 Contributors: layotte, peterericson
 Tags: metered, paywall, leaky, wordpress, magazine, news, blog, articles, remaining
 Requires at least: 3.0
@@ -22,7 +22,7 @@ You can follow this plugins development on [GitHub](https://github.com/IssueM/is
 
 == Frequently Asked Questions ==
 
-= What are the minimum requirements for IssueM's Leaky Paywall - Media Download Obfuscator? =
+= What are the minimum requirements for IssueM's Leaky Paywall - Subscriber Downloads? =
 
 You must have:
 
@@ -40,7 +40,7 @@ You must have:
 
 == License ==
 
-IssueM - Leaky Paywall - Media Download Obfuscator
+IssueM - Leaky Paywall - Subscriber Downloads
 Copyright (C) 2011 The Complete Website, LLC.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
