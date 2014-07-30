@@ -7,7 +7,7 @@
  */
  
 /*
-Plugin Name: zeen101's Leaky Paywall - Subscriber Downloads
+Plugin Name: Leaky Paywall - Subscriber Downloads
 Plugin URI: http://zeen101.com/
 Description: A premium addon for the Leaky Paywall for WordPress plugin.
 Author: zeen101 Development Team
@@ -45,11 +45,11 @@ function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
 	require_once( 'class.php' );
 
 	// Instantiate the Pigeon Pack class
-	if ( class_exists( 'Leaky_Paywall_Media_Download_Obfuscator' ) ) {
+	if ( class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 		
-		global $leaky_paywall_media_download_obfuscator;
+		global $leaky_paywall_subscriber_downloads;
 		
-		$leaky_paywall_media_download_obfuscator = new Leaky_Paywall_Media_Download_Obfuscator();
+		$leaky_paywall_subscriber_downloads = new Leaky_Paywall_Subscriber_Downloads();
 		
 		require_once( 'functions.php' );
 			

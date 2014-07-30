@@ -11,9 +11,9 @@
  *
  * @since 1.0.0
  */
-if ( ! class_exists( 'Leaky_Paywall_Media_Download_Obfuscator' ) ) {
+if ( ! class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 	
-	class Leaky_Paywall_Media_Download_Obfuscator {
+	class Leaky_Paywall_Subscriber_Downloads {
 		
 		/**
 		 * Class constructor, puts things in motion
