@@ -1,4 +1,4 @@
-=== IssueM - Leaky Paywall - Subscriber Downloads ===
+=== Leaky Paywall - Subscriber Downloads ===
 Contributors: layotte, peterericson
 Tags: metered, paywall, leaky, wordpress, magazine, news, blog, articles, remaining
 Requires at least: 3.0
@@ -13,7 +13,7 @@ Let's you obfuscate any link to any file in your media library. Requiring a user
 
 More info at http://zeen101.com
 
-You can follow this plugins development on [GitHub](https://github.com/IssueM/issuem-leaky-paywall-media-download-obfuscator)
+You can follow this plugins development on [GitHub](https://github.com/zeen101/leaky-paywall-media-download-obfuscator)
 
 == Installation ==
 
@@ -22,17 +22,17 @@ You can follow this plugins development on [GitHub](https://github.com/IssueM/is
 
 == Frequently Asked Questions ==
 
-= What are the minimum requirements for IssueM's Leaky Paywall - Subscriber Downloads? =
+= What are the minimum requirements for zeen101's Leaky Paywall - Subscriber Downloads? =
 
 You must have:
 
 * WordPress 3.3 or later
 * PHP 5
-* IssueM's Leaky Paywall version 1.1.0 or later
+* zeen101's Leaky Paywall version 2.0.0 or later
 
-= How is IssueM's Leaky Paywall Licensed? =
+= How is zeen101's Leaky Paywall Licensed? =
 
-* Like IssueM, Leaky Paywall is GPL
+* Leaky Paywall - Subscriber Downloads is GPL
 
 == Changelog ==
 = 1.0.0 =
@@ -40,7 +40,7 @@ You must have:
 
 == License ==
 
-IssueM - Leaky Paywall - Subscriber Downloads
+Leaky Paywall - Subscriber Downloads
 Copyright (C) 2011 The Complete Website, LLC.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

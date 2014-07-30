@@ -1,8 +1,8 @@
 <?php
 /**
- * Registers IssueM's Leaky Paywall class
+ * Registers zeen101's Leaky Paywall class
  *
- * @package IssueM's Leaky Paywall
+ * @package zeen101's Leaky Paywall
  * @since 1.0.0
  */
 
@@ -11,9 +11,9 @@
  *
  * @since 1.0.0
  */
-if ( ! class_exists( 'IssueM_Leaky_Paywall_Media_Download_Obfuscator' ) ) {
+if ( ! class_exists( 'Leaky_Paywall_Media_Download_Obfuscator' ) ) {
 	
-	class IssueM_Leaky_Paywall_Media_Download_Obfuscator {
+	class Leaky_Paywall_Media_Download_Obfuscator {
 		
 		/**
 		 * Class constructor, puts things in motion
@@ -28,9 +28,9 @@ if ( ! class_exists( 'IssueM_Leaky_Paywall_Media_Download_Obfuscator' ) ) {
 		
 		function process_requests() {
 								
-			global $dl_pluginissuem_leaky_paywall;
+			global $leaky_paywall;
 			
-			$issuem_settings = $dl_pluginissuem_leaky_paywall->get_settings();
+			$lp_settings = $leaky_paywall->get_settings();
 			
 			if ( !empty( $_REQUEST['leaky-paywall-media-download'] ) ) {
 				
@@ -43,8 +43,8 @@ if ( ! class_exists( 'IssueM_Leaky_Paywall_Media_Download_Obfuscator' ) ) {
 					
 					$output = '<h3>' . __( 'Unauthorize Download', 'issuem-lp-mdo' ) . '</h3>';
 		
-					$output .= '<p>' . sprintf( __( 'You must be <a href="%s">logged in</a> with a valid subscription to download this file.', 'issuem-lp-mdo' ), get_page_link( $issuem_settings['page_for_login'] ) ) . '</p>';
-					$output .= '<a href="' . get_home_url() . '">' . sprintf( __( 'back to %s', 'issuem-lp-mdo' ), $issuem_settings['site_name'] ) . '</a>';
+					$output .= '<p>' . sprintf( __( 'You must be <a href="%s">logged in</a> with a valid subscription to download this file.', 'issuem-lp-mdo' ), get_page_link( $lp_settings['page_for_login'] ) ) . '</p>';
+					$output .= '<a href="' . get_home_url() . '">' . sprintf( __( 'back to %s', 'issuem-lp-mdo' ), $lp_settings['site_name'] ) . '</a>';
 					
 					wp_die( apply_filters( 'issuem_leaky_paywall_mdo_unauthorized_download_output', $output ) );
 					

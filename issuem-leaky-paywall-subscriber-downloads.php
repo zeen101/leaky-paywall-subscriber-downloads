@@ -1,16 +1,16 @@
 <?php
 /**
- * Main PHP file used to for initial calls to IssueM's Leak Paywall classes and functions.
+ * Main PHP file used to for initial calls to zeen101's Leak Paywall classes and functions.
  *
- * @package IssueM's Leak Paywall - Subscriber Downloads
+ * @package zeen101's Leak Paywall - Subscriber Downloads
  * @since 1.0.0
  */
  
 /*
-Plugin Name: IssueM's Leaky Paywall - Subscriber Downloads
+Plugin Name: zeen101's Leaky Paywall - Subscriber Downloads
 Plugin URI: http://zeen101.com/
-Description: A premium leaky paywall add-on for WordPress and IssueM.
-Author: IssueM Development Team
+Description: A premium addon for the Leaky Paywall for WordPress plugin.
+Author: zeen101 Development Team
 Version: 1.0.0
 Author URI: http://zeen101.com/
 Tags:
@@ -20,14 +20,14 @@ Tags:
 if ( !defined( 'ZEEN101_STORE_URL' ) )
 	define( 'ZEEN101_STORE_URL', 	'http://zeen101.com' );
 	
-define( 'ISSUEM_LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads' );
-define( 'ISSUEM_LP_MDO_SLUG', 		'issuem-leaky-paywall-subscriber-downloads' );
-define( 'ISSUEM_LP_MDO_VERSION', 	'1.0.0' );
-define( 'ISSUEM_LP_MDO_DB_VERSION', '1.0.0' );
-define( 'ISSUEM_LP_MDO_URL', 		plugin_dir_url( __FILE__ ) );
-define( 'ISSUEM_LP_MDO_PATH', 		plugin_dir_path( __FILE__ ) );
-define( 'ISSUEM_LP_MDO_BASENAME', 	plugin_basename( __FILE__ ) );
-define( 'ISSUEM_LP_MDO_REL_DIR', 	dirname( ISSUEM_LP_MDO_BASENAME ) );
+define( 'LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads' );
+define( 'LP_MDO_SLUG', 		'leaky-paywall-subscriber-downloads' );
+define( 'LP_MDO_VERSION', 	'1.0.0' );
+define( 'LP_MDO_DB_VERSION', '1.0.0' );
+define( 'LP_MDO_URL', 		plugin_dir_url( __FILE__ ) );
+define( 'LP_MDO_PATH', 		plugin_dir_path( __FILE__ ) );
+define( 'LP_MDO_BASENAME', 	plugin_basename( __FILE__ ) );
+define( 'LP_MDO_REL_DIR', 	dirname( LP_MDO_BASENAME ) );
 
 /**
  * Instantiate Pigeon Pack class, require helper files
@@ -38,23 +38,23 @@ function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
 	
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	if ( is_plugin_active( 'issuem/issuem.php' ) )
-		define( 'ISSUEM_ACTIVE_LP_MDO', true );
+		define( 'ACTIVE_LP_MDO', true );
 	else
-		define( 'ISSUEM_ACTIVE_LP_MDO', false );
+		define( 'ACTIVE_LP_MDO', false );
 
 	require_once( 'class.php' );
 
 	// Instantiate the Pigeon Pack class
-	if ( class_exists( 'IssueM_Leaky_Paywall_Media_Download_Obfuscator' ) ) {
+	if ( class_exists( 'Leaky_Paywall_Media_Download_Obfuscator' ) ) {
 		
-		global $dl_pluginissuem_leaky_paywall_media_download_obfuscator;
+		global $leaky_paywall_media_download_obfuscator;
 		
-		$dl_pluginissuem_leaky_paywall_media_download_obfuscator = new IssueM_Leaky_Paywall_Media_Download_Obfuscator();
+		$leaky_paywall_media_download_obfuscator = new Leaky_Paywall_Media_Download_Obfuscator();
 		
 		require_once( 'functions.php' );
 			
 		//Internationalization
-		load_plugin_textdomain( 'issuem-lp-mdo', false, ISSUEM_LP_MDO_REL_DIR . '/i18n/' );
+		load_plugin_textdomain( 'issuem-lp-mdo', false, LP_MDO_REL_DIR . '/i18n/' );
 			
 	}
 

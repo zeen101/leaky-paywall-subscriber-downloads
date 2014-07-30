@@ -1,6 +1,6 @@
 <?php
 /**
- * @package IssueM's Leaky Paywall - Media Download Obfuscator
+ * @package zeen101's Leaky Paywall - Media Download Obfuscator
  * @since 1.0.0
  */
 
