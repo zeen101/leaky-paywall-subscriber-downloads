@@ -20,6 +20,14 @@ You can follow this plugins development on [GitHub](https://github.com/zeen101/l
 1. Upload the entire `issuem-leaky-paywall-media-download-obfuscator` folder to your `/wp-content/plugins/` folder.
 1. Go to the 'Plugins' page in the menu and activate the plugin.
 
+== How to restrict a file to subscriber views only ==
+
+After installation create a link to your file with this format: 
+
+http://yoursite.com/?leaky-paywall-media-download=media_id 
+
+media_id is the ID of the attachment (found in the media section of WP)
+
 == Frequently Asked Questions ==
 
 = What are the minimum requirements for zeen101's Leaky Paywall - Subscriber Downloads? =
