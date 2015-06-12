@@ -5,7 +5,7 @@ Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 1.0.0
 
-Let's you obfuscate any link to any file in your media library. More info at http://zeen101.com
+Let's you obfuscate any link to any file in your media library. More info at <a href="https://zeen101.com/">ZEEN101.COM</a>
 
 == Description ==
 
