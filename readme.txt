@@ -5,7 +5,7 @@ Requires at least: 3.0
 Tested up to: 3.9
 Stable tag: 1.0.0
 
-Let's you obfuscate any link to any file in your media library. More info at http://zeen101.com
+Let's you obfuscate any link to any file in your media library. More info at <a href="https://zeen101.com/">ZEEN101.COM</a>
 
 == Description ==
 
@@ -19,6 +19,14 @@ You can follow this plugins development on [GitHub](https://github.com/zeen101/l
 
 1. Upload the entire `issuem-leaky-paywall-media-download-obfuscator` folder to your `/wp-content/plugins/` folder.
 1. Go to the 'Plugins' page in the menu and activate the plugin.
+
+== How to restrict a file to subscriber views only ==
+
+After installation create a link to your file with this format: 
+
+http://yoursite.com/?leaky-paywall-media-download=media_id 
+
+media_id is the ID of the attachment (found in the media section of WP)
 
 == Frequently Asked Questions ==
 
