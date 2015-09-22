@@ -43,20 +43,37 @@ function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
 		define( 'ACTIVE_LP_MDO', false );
 
 	require_once( 'class.php' );
-
-	// Instantiate the Pigeon Pack class
-	if ( class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
-		
-		global $leaky_paywall_subscriber_downloads;
-		
-		$leaky_paywall_subscriber_downloads = new Leaky_Paywall_Subscriber_Downloads();
-		
-		require_once( 'functions.php' );
+	
+	if ( is_plugin_active( 'issuem-leaky-paywall/issuem-leaky-paywall.php' ) 
+		|| is_plugin_active( 'leaky-paywall/leaky-paywall.php' ) ) {
+				
+		// Instantiate the Pigeon Pack class
+		if ( class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 			
-		//Internationalization
-		load_plugin_textdomain( 'issuem-lp-mdo', false, LP_MDO_REL_DIR . '/i18n/' );
+			global $leaky_paywall_subscriber_downloads;
 			
+			$leaky_paywall_subscriber_downloads = new Leaky_Paywall_Subscriber_Downloads();
+			
+			require_once( 'functions.php' );
+				
+			//Internationalization
+			load_plugin_textdomain( 'issuem-lp-mdo', false, LP_MDO_REL_DIR . '/i18n/' );
+				
+		}
+		
+	} else {
+	
+		add_action( 'admin_notices', 'leaky_paywall_media_download_obfuscator_requirement_nag' );
+		
 	}
 
 }
 add_action( 'plugins_loaded', 'issuem_leaky_paywall_media_download_obfuscator_plugins_loaded', 4815162342 ); //wait for the plugins to be loaded before init
+
+function leaky_paywall_media_download_obfuscator_requirement_nag() {
+	?>
+	<div id="leaky-paywall-requirement-nag" class="update-nag">
+		<?php _e( 'You must have the Leaky Paywall plugin activated to use the Leaky Subscriber Downloads plugin.' ); ?>
+	</div>
+	<?php
+}
