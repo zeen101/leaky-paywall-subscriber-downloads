@@ -35,7 +35,7 @@ if ( ! class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 			if ( !empty( $_REQUEST['leaky-paywall-media-download'] ) ) {
 				
 				//Admins or subscribed users can download PDFs
-				if ( current_user_can( 'manage_options' ) || is_issuem_leaky_subscriber_logged_in() ) {
+				if ( current_user_can( 'manage_options' ) || is_leaky_subscriber_logged_in() ) {
 				
 					issuem_leaky_paywall_mdo_server_download( $_REQUEST['leaky-paywall-media-download'] );
 				

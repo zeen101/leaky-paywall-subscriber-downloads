@@ -11,7 +11,7 @@ Plugin Name: Leaky Paywall - Subscriber Downloads
 Plugin URI: http://zeen101.com/
 Description: A premium addon for the Leaky Paywall for WordPress plugin.
 Author: zeen101 Development Team
-Version: 1.0.0
+Version: 1.1.0
 Author URI: http://zeen101.com/
 Tags:
 */
@@ -22,7 +22,7 @@ if ( !defined( 'ZEEN101_STORE_URL' ) )
 	
 define( 'LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads' );
 define( 'LP_MDO_SLUG', 		'leaky-paywall-subscriber-downloads' );
-define( 'LP_MDO_VERSION', 	'1.0.0' );
+define( 'LP_MDO_VERSION', 	'1.1.0' );
 define( 'LP_MDO_DB_VERSION', '1.0.0' );
 define( 'LP_MDO_URL', 		plugin_dir_url( __FILE__ ) );
 define( 'LP_MDO_PATH', 		plugin_dir_path( __FILE__ ) );
