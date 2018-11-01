@@ -7,7 +7,7 @@
  */
 
 /**
- * This class registers the main issuem functionality
+ * This class registers the main functionality
  *
  * @since 1.0.0
  */
@@ -37,16 +37,16 @@ if ( ! class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 				//Admins or subscribed users can download PDFs
 				if ( current_user_can( 'manage_options' ) || is_leaky_subscriber_logged_in() ) {
 				
-					issuem_leaky_paywall_mdo_server_download( $_REQUEST['leaky-paywall-media-download'] );
+					leaky_paywall_mdo_server_download( $_REQUEST['leaky-paywall-media-download'] );
 				
 				} else {
 					
-					$output = '<h3>' . __( 'Unauthorize Download', 'issuem-lp-mdo' ) . '</h3>';
+					$output = '<h3>' . __( 'Unauthorize Download', 'lp-subscriber-downloads' ) . '</h3>';
 		
-					$output .= '<p>' . sprintf( __( 'You must be <a href="%s">logged in</a> with a valid subscription to download this file.', 'issuem-lp-mdo' ), get_page_link( $lp_settings['page_for_login'] ) ) . '</p>';
-					$output .= '<a href="' . get_home_url() . '">' . sprintf( __( 'back to %s', 'issuem-lp-mdo' ), $lp_settings['site_name'] ) . '</a>';
+					$output .= '<p>' . sprintf( __( 'You must be <a href="%s">logged in</a> with a valid subscription to download this file.', 'lp-subscriber-downloads' ), get_page_link( $lp_settings['page_for_login'] ) ) . '</p>';
+					$output .= '<a href="' . get_home_url() . '">' . sprintf( __( 'back to %s', 'lp-subscriber-downloads' ), $lp_settings['site_name'] ) . '</a>';
 					
-					wp_die( apply_filters( 'issuem_leaky_paywall_mdo_unauthorized_download_output', $output ) );
+					wp_die( apply_filters( 'leaky_paywall_mdo_unauthorized_download_output', $output ) );
 					
 				}
 				

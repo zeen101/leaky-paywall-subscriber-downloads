@@ -1,8 +1,8 @@
 === Leaky Paywall - Subscriber Downloads ===
 Contributors: layotte, peterericson
 Tags: metered, paywall, leaky, wordpress, magazine, news, blog, articles, remaining
-Requires at least: 3.0
-Tested up to: 4.5
+Requires at least: 4.0
+Tested up to: 4.9.9
 Stable tag: 1.1.0
 
 Let's you obfuscate any link to any file in your media library. More info at <a href="https://zeen101.com/">ZEEN101.COM</a>
@@ -11,13 +11,13 @@ Let's you obfuscate any link to any file in your media library. More info at <a 
 
 Let's you obfuscate any link to any file in your media library. Requiring a user to have a valid Leaky Paywall subscription before downloading content.
 
-More info at http://zeen101.com
+More info at https://zeen101.com
 
-You can follow this plugins development on [GitHub](https://github.com/zeen101/leaky-paywall-media-download-obfuscator)
+You can follow this plugins development on [GitHub](https://github.com/zeen101/leaky-paywall-subscriber-downloads)
 
 == Installation ==
 
-1. Upload the entire `issuem-leaky-paywall-media-download-obfuscator` folder to your `/wp-content/plugins/` folder.
+1. Upload the entire `leaky-paywall-subscriber-downloads` folder to your `/wp-content/plugins/` folder.
 1. Go to the 'Plugins' page in the menu and activate the plugin.
 
 == How to restrict a file to subscriber views only ==

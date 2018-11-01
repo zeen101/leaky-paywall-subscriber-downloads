@@ -8,17 +8,17 @@
  
 /*
 Plugin Name: Leaky Paywall - Subscriber Downloads
-Plugin URI: http://zeen101.com/
-Description: A premium addon for the Leaky Paywall for WordPress plugin.
-Author: zeen101 Development Team
+Plugin URI: https://zeen101.com/
+Description: Require users to have a valid Leaky Paywall subscription before downloading a file
+Author: ZEEN101
 Version: 1.1.0
-Author URI: http://zeen101.com/
-Tags:
+Author URI: https://zeen101.com/
+Tags: paywall, downloads
 */
 
 //Define global variables...
 if ( !defined( 'ZEEN101_STORE_URL' ) )
-	define( 'ZEEN101_STORE_URL', 	'http://zeen101.com' );
+	define( 'ZEEN101_STORE_URL', 	'https://zeen101.com' );
 	
 define( 'LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads' );
 define( 'LP_MDO_SLUG', 		'leaky-paywall-subscriber-downloads' );
@@ -34,7 +34,7 @@ define( 'LP_MDO_REL_DIR', 	dirname( LP_MDO_BASENAME ) );
  *
  * @since 1.0.0
  */
-function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
+function leaky_paywall_media_download_obfuscator_plugins_loaded() {
 	
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	if ( is_plugin_active( 'issuem/issuem.php' ) )
@@ -44,8 +44,7 @@ function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
 
 	require_once( 'class.php' );
 	
-	if ( is_plugin_active( 'issuem-leaky-paywall/issuem-leaky-paywall.php' ) 
-		|| is_plugin_active( 'leaky-paywall/leaky-paywall.php' ) ) {
+	if ( is_plugin_active( 'leaky-paywall/leaky-paywall.php' ) ) {
 				
 		// Instantiate the Pigeon Pack class
 		if ( class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
@@ -57,7 +56,7 @@ function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
 			require_once( 'functions.php' );
 				
 			//Internationalization
-			load_plugin_textdomain( 'issuem-lp-mdo', false, LP_MDO_REL_DIR . '/i18n/' );
+			load_plugin_textdomain( 'lp-subscriber-downloads', false, LP_MDO_REL_DIR . '/i18n/' );
 				
 		}
 		
@@ -68,7 +67,7 @@ function issuem_leaky_paywall_media_download_obfuscator_plugins_loaded() {
 	}
 
 }
-add_action( 'plugins_loaded', 'issuem_leaky_paywall_media_download_obfuscator_plugins_loaded', 4815162342 ); //wait for the plugins to be loaded before init
+add_action( 'plugins_loaded', 'leaky_paywall_media_download_obfuscator_plugins_loaded', 4815162342 ); //wait for the plugins to be loaded before init
 
 function leaky_paywall_media_download_obfuscator_requirement_nag() {
 	?>

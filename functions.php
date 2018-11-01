@@ -1,12 +1,12 @@
 <?php
 /**
- * @package zeen101's Leaky Paywall - Media Download Obfuscator
+ * @package zeen101's Leaky Paywall - Subscriber Downloads
  * @since 1.0.0
  */
 
-if ( !function_exists( 'issuem_leaky_paywall_mdo_server_download' ) ) {
+if ( !function_exists( 'leaky_paywall_mdo_server_download' ) ) {
 
-	function issuem_leaky_paywall_mdo_server_download( $download_id ) {
+	function leaky_paywall_mdo_server_download( $download_id ) {
 	    // Grab the download info
 	    $url = wp_get_attachment_url( $download_id );
 	    	
@@ -61,18 +61,18 @@ if ( !function_exists( 'issuem_leaky_paywall_mdo_server_download' ) ) {
 	                die();
 	
 	            } else {
-					$output = '<h3>' . __( 'Error Downloading File', 'issuem-lp-mdo' ) . '</h3>';
+					$output = '<h3>' . __( 'Error Downloading File', 'lp-subscriber-downloads' ) . '</h3>';
 		
-					$output .= '<p>' . sprintf( __( 'Download Error: Invalid response: %s', 'issuem-lp-mdo' ), wp_remote_retrieve_response_code( $response ) ) . '</p>';
-					$output .= '<a href="' . get_home_url() . '">' . __( 'Home', 'issuem-leak-paywall' ) . '</a>';
+					$output .= '<p>' . sprintf( __( 'Download Error: Invalid response: %s', 'lp-subscriber-downloads' ), wp_remote_retrieve_response_code( $response ) ) . '</p>';
+					$output .= '<a href="' . get_home_url() . '">' . __( 'Home', 'lp-subscriber-downloads' ) . '</a>';
 	            	
 		            wp_die( $output );
 	            }
 	        } else {
-				$output = '<h3>' . __( 'Error Downloading File', 'issuem-lp-mdo' ) . '</h3>';
+				$output = '<h3>' . __( 'Error Downloading File', 'lp-subscriber-downloads' ) . '</h3>';
 	
-				$output .= '<p>' . sprintf( __( 'Download Error: %s', 'issuem-lp-mdo' ), $response->get_error_message() ) . '</p>';
-				$output .= '<a href="' . get_home_url() . '">' . __( 'Home', 'issuem-leak-paywall' ) . '</a>';
+				$output .= '<p>' . sprintf( __( 'Download Error: %s', 'lp-subscriber-downloads' ), $response->get_error_message() ) . '</p>';
+				$output .= '<a href="' . get_home_url() . '">' . __( 'Home', 'lp-subscriber-downloads' ) . '</a>';
             	
 	            wp_die( $output );
 	        }
