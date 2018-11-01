@@ -8,10 +8,11 @@ if ( !function_exists( 'leaky_paywall_mdo_server_download' ) ) {
 
 	function leaky_paywall_mdo_server_download( $download_id ) {
 	    // Grab the download info
-	    $url = wp_get_attachment_url( $download_id );
+		$url = wp_get_attachment_url( $download_id );
 	    	
 	    // Attempt to grab file
 	    if ( $response = wp_remote_head( str_replace( ' ', '%20', $url ) ) ) {
+
 	        if ( ! is_wp_error( $response ) ) {
 	            $valid_response_codes = array(
 	                200,

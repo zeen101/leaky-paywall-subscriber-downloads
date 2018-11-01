@@ -62,9 +62,8 @@ if ( ! class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 			if ( current_user_can( 'manage_options' ) ) {
 				return true;
 			}
-
 		
-			if ( leaky_paywall_user_has_access() ) {
+			if ( leaky_paywall_user_has_access( wp_get_current_user() ) ) {
 				return true;
 			}
 			
