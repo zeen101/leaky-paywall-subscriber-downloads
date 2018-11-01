@@ -103,3 +103,27 @@ if ( !function_exists( 'wp_print_r' ) ) {
     }   
 	
 }
+
+
+/**
+* Display the special Leaky Paywall Subscriber Download URL when viewing a media file in the admin
+*
+* @since 1.2.0
+*
+* @param array form_fields
+* @param object post
+* @return array
+*/
+function leaky_paywall_subscriber_downloads_attachment_url_field( $form_fields, $post ) {
+
+    $form_fields['lp-subscriber-downloads-url'] = array(
+        'label' => 'Leaky Paywall Subscriber<br> Download URL',
+		'input' => 'text',
+        'value' => home_url() . '?leaky-paywall-media-download=' . $post->ID,
+        'helps' => 'This URL requires an active Leaky Paywall subscription to download file',
+	);
+
+    return $form_fields;
+}
+
+add_filter( 'attachment_fields_to_edit', 'leaky_paywall_subscriber_downloads_attachment_url_field', 10, 2 );
