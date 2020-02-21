@@ -37,6 +37,7 @@ define( 'LP_MDO_REL_DIR', 	dirname( LP_MDO_BASENAME ) );
 function leaky_paywall_media_download_obfuscator_plugins_loaded() {
 	
 	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	
 	if ( is_plugin_active( 'issuem/issuem.php' ) )
 		define( 'ACTIVE_LP_MDO', true );
 	else
@@ -44,7 +45,7 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded() {
 
 	require_once( 'class.php' );
 	
-	if ( is_plugin_active( 'leaky-paywall/leaky-paywall.php' ) ) {
+	if ( is_plugin_active( 'issuem-leaky-paywall/issuem-leaky-paywall.php' ) || is_plugin_active( 'leaky-paywall/leaky-paywall.php' ) ) {
 				
 		// Instantiate the Pigeon Pack class
 		if ( class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
@@ -59,6 +60,23 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded() {
 			load_plugin_textdomain( 'lp-subscriber-downloads', false, LP_MDO_REL_DIR . '/i18n/' );
 				
 		}
+
+		// Upgrade function based on EDD updater class
+		if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
+			include( dirname( __FILE__ ) . '/include/EDD_SL_Plugin_Updater.php' );
+		} 
+
+		$license = new Leaky_Paywall_License_Key( LP_MDO_SLUG, LP_MDO_NAME );
+		$settings = $license->get_settings();
+
+		$license_key = trim( $settings['license_key'] );
+
+		$edd_updater = new EDD_SL_Plugin_Updater( ZEEN101_STORE_URL, __FILE__, array(
+			'version' 	=> LP_MDO_VERSION, // current version number
+			'license' 	=> $license_key,	
+			'item_name' => LP_MDO_NAME,	
+			'author' 	=> 'Zeen101 Development Team'
+		) );
 		
 	} else {
 	
@@ -67,7 +85,7 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded() {
 	}
 
 }
-add_action( 'plugins_loaded', 'leaky_paywall_media_download_obfuscator_plugins_loaded', 4815162342 ); //wait for the plugins to be loaded before init
+add_action( 'plugins_loaded', 'leaky_paywall_media_download_obfuscator_plugins_loaded', 4815162449 ); //wait for the plugins to be loaded before init
 
 function leaky_paywall_media_download_obfuscator_requirement_nag() {
 	?>
