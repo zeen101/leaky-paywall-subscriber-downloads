@@ -55,6 +55,7 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded() {
 			$leaky_paywall_subscriber_downloads = new Leaky_Paywall_Subscriber_Downloads();
 			
 			require_once( 'functions.php' );
+			require_once( 'include/admin/media-settings.php' );
 				
 			//Internationalization
 			load_plugin_textdomain( 'lp-subscriber-downloads', false, LP_MDO_REL_DIR . '/i18n/' );
