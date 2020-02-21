@@ -44,11 +44,14 @@ if ( ! class_exists( 'Leaky_Paywall_Subscriber_Downloads' ) ) {
 			} else {
 
 				$lp_subscriber_downloads_specific_levels = get_post_meta( $media_id, '_lp_subscriber_downloads_specific_levels', true );
+				$user = wp_get_current_user();
 
 				$output = '<h3>' . __( 'Unauthorized Download', 'lp-subscriber-downloads' ) . '</h3>';
 
 				if ( empty( $lp_subscriber_downloads_specific_levels ) && !is_user_logged_in() ) {
 					$output .= '<p>' . sprintf( __( 'You must be <a href="%s">logged in</a> with a valid <a href="%s">subscription</a> to download this file.', 'lp-subscriber-downloads' ), get_page_link( $lp_settings['page_for_login'] ), get_page_link( $lp_settings['page_for_subscription'] ) ) . '</p>';
+				} else if ( !empty( $lp_subscriber_downloads_specific_levels ) && is_user_logged_in() && !leaky_paywall_user_has_access( $user ) ) {
+					$output .= '<p>' . sprintf( __( 'You need an active <a href="%s">subscription</a> to download this file.', 'lp-subscriber-downloads' ), get_page_link( $lp_settings['page_for_subscription'] ) ) . '</p>';
 				} else if ( !empty( $lp_subscriber_downloads_specific_levels ) && is_user_logged_in() ) {
 					$output .= '<p>' . sprintf( __( 'You need a different <a href="%s">subscription</a> to download this file.', 'lp-subscriber-downloads' ), get_page_link( $lp_settings['page_for_subscription'] ) ) . '</p>';
 				} else {
