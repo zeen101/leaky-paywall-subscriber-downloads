@@ -2,8 +2,8 @@
 Contributors: layotte, peterericson
 Tags: metered, paywall, leaky, wordpress, magazine, news, blog, articles, remaining
 Requires at least: 5.0
-Tested up to: 5.3.2
-Stable tag: 1.3.0
+Tested up to: 5.8.1
+Stable tag: 1.4.0
 
 Let's you obfuscate any link to any file in your media library. More info at <a href="https://zeen101.com/">ZEEN101.COM</a>
 
@@ -43,6 +43,9 @@ You must have:
 * Leaky Paywall - Subscriber Downloads is GPL
 
 == Changelog ==
+
+= 1.4.0 =
+* Add check for multiple subscriptions
 
 = 1.3.0 =
 * Add license key settings
