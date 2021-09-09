@@ -5,13 +5,17 @@
  * @since 1.0.0
  */
 
-if (!function_exists('leaky_paywall_mdo_server_download')) {
+if (!function_exists('leaky_paywall_subdown_server_download')) {
 
-	function leaky_paywall_mdo_server_download($download_id)
+	function leaky_paywall_subdown_server_download($download_id)
 	{
+
 		// Grab the download info
 		$url = wp_get_attachment_url($download_id);
-		ini_set('memory_limit', apply_filters('leaky_paywall_mdo_server_download_memory_limiit', '512M'));
+
+		wp_redirect(str_replace(' ', '%20', $url));
+
+		exit;
 
 		// Attempt to grab file
 		if ($response = wp_remote_head(str_replace(' ', '%20', $url))) {
