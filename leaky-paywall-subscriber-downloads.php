@@ -12,7 +12,7 @@ Plugin Name: Leaky Paywall - Subscriber Downloads
 Plugin URI: https://zeen101.com/
 Description: Require users to have a valid Leaky Paywall subscription before downloading a file
 Author: ZEEN101
-Version: 1.4.0
+Version: 1.4.1
 Author URI: https://zeen101.com/
 Tags: paywall, downloads
 */
@@ -23,7 +23,7 @@ if (!defined('ZEEN101_STORE_URL'))
 
 define('LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads');
 define('LP_MDO_SLUG', 		'leaky-paywall-subscriber-downloads');
-define('LP_MDO_VERSION', 	'1.4.0');
+define('LP_MDO_VERSION', 	'1.4.1');
 define('LP_MDO_DB_VERSION', '1.0.0');
 define('LP_MDO_URL', 		plugin_dir_url(__FILE__));
 define('LP_MDO_PATH', 		plugin_dir_path(__FILE__));
