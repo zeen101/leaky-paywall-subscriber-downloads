@@ -36,8 +36,8 @@ if (!class_exists('Leaky_Paywall_Subscriber_Downloads')) {
 			}
 
 			$media_id = absint($_GET['leaky-paywall-media-download']);
-			global $leaky_paywall;
-			$lp_settings = $leaky_paywall->get_settings();
+			
+			$lp_settings = get_leaky_paywall_settings();
 
 			if ($this->user_can_download_file($media_id)) {
 

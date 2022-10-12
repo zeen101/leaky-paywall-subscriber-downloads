@@ -9,11 +9,11 @@
 
 /*
 Plugin Name: Leaky Paywall - Subscriber Downloads
-Plugin URI: https://zeen101.com/
+Plugin URI: https://leakypaywall.com
 Description: Require users to have a valid Leaky Paywall subscription before downloading a file
-Author: ZEEN101
-Version: 1.4.1
-Author URI: https://zeen101.com/
+Author: Leaky Paywall
+Version: 1.5.0
+Author URI: https://leakypaywall.com
 Tags: paywall, downloads
 */
 
@@ -23,7 +23,7 @@ if (!defined('ZEEN101_STORE_URL'))
 
 define('LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads');
 define('LP_MDO_SLUG', 		'leaky-paywall-subscriber-downloads');
-define('LP_MDO_VERSION', 	'1.4.1');
+define('LP_MDO_VERSION', 	'1.5.0');
 define('LP_MDO_DB_VERSION', '1.0.0');
 define('LP_MDO_URL', 		plugin_dir_url(__FILE__));
 define('LP_MDO_PATH', 		plugin_dir_path(__FILE__));
@@ -64,21 +64,21 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded()
 		}
 
 		// Upgrade function based on EDD updater class
-		if (!class_exists('EDD_SL_Plugin_Updater')) {
-			include(dirname(__FILE__) . '/include/EDD_SL_Plugin_Updater.php');
+		if (!class_exists('EDD_LP_Plugin_Updater')) {
+			include(dirname(__FILE__) . '/include/EDD_LP_Plugin_Updater.php');
 		}
 
 		$license = new Leaky_Paywall_License_Key(LP_MDO_SLUG, LP_MDO_NAME);
+
 		$settings = $license->get_settings();
-
 		$license_key = trim($settings['license_key']);
-
-		$edd_updater = new EDD_SL_Plugin_Updater(ZEEN101_STORE_URL, __FILE__, array(
+		$edd_updater = new EDD_LP_Plugin_Updater(ZEEN101_STORE_URL, __FILE__, array(
 			'version' 	=> LP_MDO_VERSION, // current version number
 			'license' 	=> $license_key,
 			'item_name' => LP_MDO_NAME,
 			'author' 	=> 'Zeen101 Development Team'
 		));
+
 	} else {
 
 		add_action('admin_notices', 'leaky_paywall_media_download_obfuscator_requirement_nag');
