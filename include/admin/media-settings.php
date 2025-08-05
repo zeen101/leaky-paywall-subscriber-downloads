@@ -11,12 +11,11 @@ class Leaky_Paywall_Subscriber_Downloads_Media_Settings {
 	* @since 1.0
 	*/
 	public function __construct() {
-		
+
 		add_filter( 'attachment_fields_to_edit', array( $this, 'attachment_url_field' ), 10, 2 );
 		add_filter( 'attachment_fields_to_edit', array( $this, 'attachment_level_access' ), 20, 2 );
 
 		add_filter( 'attachment_fields_to_save', array( $this, 'save_fields' ), null, 2);
- 
 
 	}
 
@@ -41,7 +40,7 @@ class Leaky_Paywall_Subscriber_Downloads_Media_Settings {
 	    return $form_fields;
 	}
 
-	public function attachment_level_access( $form_fields, $post ) 
+	public function attachment_level_access( $form_fields, $post )
 	{
 
 		$lp_subscriber_downloads_specific_levels = get_post_meta( $post->ID, '_lp_subscriber_downloads_specific_levels', true );
@@ -54,8 +53,8 @@ class Leaky_Paywall_Subscriber_Downloads_Media_Settings {
 		$levels_html = '';
 
 		foreach( $levels as $key => $level ) {
-			
-			if ( $level['deleted'] ) {
+
+			if ( isset($level['deleted']) && $level['deleted'] ) {
 				continue;
 			}
 
@@ -66,8 +65,8 @@ class Leaky_Paywall_Subscriber_Downloads_Media_Settings {
 			}
 
 			$levels_html .= '<input type="checkbox" id="attachments-' . $post->ID . '-lp_subscriber_downloads_specific_levels" name="attachments['. $post->ID .'][lp_subscriber_downloads_specific_levels][' . $key . ']" value="' . $key . '" ' . $checked . ' >' . $level['label'] . '<br>';
-		}		
-		
+		}
+
 	    $form_fields['lp_subscriber_downloads_specific_levels'] = array(
 	        'label' => 'Require Specific Level',
 			'input' => 'html',
@@ -80,16 +79,16 @@ class Leaky_Paywall_Subscriber_Downloads_Media_Settings {
 
 	}
 
-	public function save_fields( $post, $attachment ) 
+	public function save_fields( $post, $attachment )
 	{
-		
-		if ( isset( $attachment['lp_subscriber_downloads_specific_levels'] ) ) {  
+
+		if ( isset( $attachment['lp_subscriber_downloads_specific_levels'] ) ) {
 	        update_post_meta( $post['ID'], '_lp_subscriber_downloads_specific_levels', $attachment['lp_subscriber_downloads_specific_levels'] );
 	    } else {
-	        update_post_meta( $post['ID'], '_lp_subscriber_downloads_specific_levels', array() );  
+	        update_post_meta( $post['ID'], '_lp_subscriber_downloads_specific_levels', array() );
 	    }
 
-	    return $post;  
+	    return $post;
 
 	}
 

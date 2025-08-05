@@ -1,19 +1,17 @@
 === Leaky Paywall - Subscriber Downloads ===
-Contributors: layotte, peterericson
-Tags: metered, paywall, leaky, wordpress, magazine, news, blog, articles, remaining
+Contributors: layotte, endocreative
+Tags: metered, paywall, downloads, membership
 Requires at least: 5.0
-Tested up to: 6.0.2
-Stable tag: 1.5.0
+Tested up to: 6.8.2
+Stable tag: 1.5.1
 
-Let's you obfuscate any link to any file in your media library. More info at <a href="https://zeen101.com/">ZEEN101.COM</a>
+Let's you obfuscate any link to any file in your media library.
 
 == Description ==
 
 Let's you obfuscate any link to any file in your media library. Requiring a user to have a valid Leaky Paywall subscription before downloading content.
 
-More info at https://zeen101.com
-
-You can follow this plugins development on [GitHub](https://github.com/zeen101/leaky-paywall-subscriber-downloads)
+More info at https://leakypaywall.com
 
 == Installation ==
 
@@ -22,9 +20,9 @@ You can follow this plugins development on [GitHub](https://github.com/zeen101/l
 
 == How to restrict a file to subscriber views only ==
 
-After installation create a link to your file with this format: 
+After installation create a link to your file with this format:
 
-http://yoursite.com/?leaky-paywall-media-download=media_id 
+http://yoursite.com/?leaky-paywall-media-download=media_id
 
 media_id is the ID of the attachment (found in the media section of WP)
 
@@ -34,15 +32,19 @@ media_id is the ID of the attachment (found in the media section of WP)
 
 You must have:
 
-* WordPress 3.3 or later
-* PHP 5
-* zeen101's Leaky Paywall version 2.0.0 or later
+* WordPress 5.8 or later
+* PHP 7
+* Leaky Paywall version 4.0.0 or later
 
-= How is zeen101's Leaky Paywall Licensed? =
+= How is Leaky Paywall - Subscriber Downloads Licensed? =
 
 * Leaky Paywall - Subscriber Downloads is GPL
 
 == Changelog ==
+
+= 1.5.1 =
+* Fix array error
+* Add new updater
 
 = 1.5.0 =
 * Fix call to Leaky Paywall settings

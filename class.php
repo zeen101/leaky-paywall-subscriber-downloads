@@ -41,7 +41,7 @@ class Leaky_Paywall_Subscriber_Downloads
 
 			$output .= '<a href="' . get_home_url() . '">' . sprintf(__('back to %s', 'lp-subscriber-downloads'), $lp_settings['site_name']) . '</a>';
 
-			wp_die(apply_filters('leaky_paywall_mdo_unauthorized_download_output', $output));
+			wp_die( wp_kses_post( apply_filters('leaky_paywall_mdo_unauthorized_download_output', $output)) );
 		}
 	}
 

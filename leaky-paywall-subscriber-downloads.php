@@ -12,18 +12,19 @@ Plugin Name: Leaky Paywall - Subscriber Downloads
 Plugin URI: https://leakypaywall.com
 Description: Require users to have a valid Leaky Paywall subscription before downloading a file
 Author: Leaky Paywall
-Version: 1.5.0
+Version: 1.5.1
 Author URI: https://leakypaywall.com
 Tags: paywall, downloads
 */
 
 //Define global variables...
-if (!defined('ZEEN101_STORE_URL'))
+if (!defined('ZEEN101_STORE_URL')) {
 	define('ZEEN101_STORE_URL', 	'https://zeen101.com');
+}
 
 define('LP_MDO_NAME', 		'Leaky Paywall - Subscriber Downloads');
 define('LP_MDO_SLUG', 		'leaky-paywall-subscriber-downloads');
-define('LP_MDO_VERSION', 	'1.5.0');
+define('LP_MDO_VERSION', 	'1.5.1');
 define('LP_MDO_DB_VERSION', '1.0.0');
 define('LP_MDO_URL', 		plugin_dir_url(__FILE__));
 define('LP_MDO_PATH', 		plugin_dir_path(__FILE__));
@@ -58,6 +59,7 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded()
 
 			require_once('functions.php');
 			require_once('include/admin/media-settings.php');
+			require_once('include/updates.php');
 
 			//Internationalization
 			load_plugin_textdomain('lp-subscriber-downloads', false, LP_MDO_REL_DIR . '/i18n/');
@@ -75,7 +77,7 @@ function leaky_paywall_media_download_obfuscator_plugins_loaded()
 		$edd_updater = new EDD_LP_Plugin_Updater(ZEEN101_STORE_URL, __FILE__, array(
 			'version' 	=> LP_MDO_VERSION, // current version number
 			'license' 	=> $license_key,
-			'item_name' => LP_MDO_NAME,
+			'item_id'	=> 12423,
 			'author' 	=> 'Zeen101 Development Team'
 		));
 
